@@ -1,0 +1,217 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,letterpaper,palatine]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{textcomp}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.95]{geometry}
+\usepackage{multicol}
+\usepackage{import}
+
+% personal data
+\name{Tao Zhu}{}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{\faMapMarker\enspace  2636 Melfa Lane, Vancouver, BC,  V6T 2C6}
+  
+\newcommand*{\customcventry}[7][.10em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.10em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+  
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\labelitemi}{\small$\bullet$}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-21mm}
+\begin{center}
+\faEnvelope{ zhutaosx@gmail.com }
+\faHome{ \href{https://github.com/Legitao}{https://github.com/Legitao} }
+\faMobile{ +1-236-988-1308 } \\
+% \faGithub{ \href{https://github.com/Xiang-Gu}{Xiang-Gu} }
+% \faLinkedin{ \href{https://www.linkedin.com/in/guxiang/}{guxiang} }
+\end{center}
+
+\vspace*{-7mm}
+\section{EDUCATION}
+\vspace*{-2mm}
+{\customcventry{Sept. 2019 -- Dec. 2021 (Expected)}{M.Eng. in Computer Engineering}{The University of British Columbia}{Vancouver, BC}{}{GPA: 3.74/4.0}}
+ 
+{\customcventry{Sep. 2015 -- Jun. 2019}{B.S. in Computer Science}{Shanghai Jiao Tong University}{Shanghai, China}{}{GPA: 3.7/4.0}}
+
+\vspace*{-4mm}
+\section{PROFESSIONAL EXPERIENCE}
+\vspace*{-2mm}
+
+\setlength{\parskip}{0.2em}
+{\customcventry{Jun. 2020 -- Sept. 2020}{\textbf{Research Intern}}{Software AnaLysis and Testing (SALT) lab, UBC}{Vancouver, Canada}{}{}}
+  {\begin{itemize}
+    \item Performed an empirical study of using the Graph Neural Network(GNN) with PyTorch to automatically fix JavaScript bugs in a large dataset.
+    \item Utilized Docker to containerize the GNN application to run on different servers.
+  \end{itemize}
+}
+
+{\customcventry{Jun. 2018 -- Sept. 2018}{\textbf{Software Engineer Intern}}{Intel Corporation}{Shanghai, China}{}{}}
+  {\begin{itemize}
+    \item Developed database performance benchmark for Intel’s Zero-day Linux kernel performance testing framework using Shell and Ruby.
+    \item Developed virtual machine testing functionality to automatically install and invoke the framework from hosting machine.
+    \item Assisted in writing the documentation of the framework.
+    \item URL:www.github.com/intel/lkp-tests
+  \end{itemize}
+}
+
+\setlength{\parskip}{0.2em}
+
+\vspace*{-4mm}
+\section{SELECTED PROJECTS}
+\vspace*{-2mm}
+
+\customcvproject{Blockchain Donation Platform}{Jan. 2020 -- April. 2020}{Blockchain Software Engineering Course Project}
+\begin{itemize}
+    \item Developed a digital currency(Ether) donation platform as an decentralized application on the Ethereum blockchain using Truffle framework.
+    \item Wrote smart contracts with the Solidity programming language. Tested the smart contracts using Mocha and deployed them to the local blockchain in Ganache.
+    \item Built a dynamically rendered front end using React.js. Used Metamask extension to connect to our local Ethereum blockchain.
+\end{itemize}
+
+\customcvproject{Shopping Store Web Application}{Sept. 2019 -- Dec 2019}{Building Modern Web Applications Course Project}
+\begin{itemize}
+    \item Developed an online store web app with product filter and checkout functionality.
+    \item Built a dynamically rendered front end with AJAX communication to the server.
+    \item Designed a backend server with REST API using Node.js and Express.js and connected it to MongoDB.
+\end{itemize}
+
+
+\customcvproject{Robocode Learning System}{Sept. 2019 -- Dec 2019}{Architecture of Learning Systems Course Project}
+\begin{itemize}
+    \item Developed the controller of robocode tank with neural net and reinforcement learning using Java.
+    \item Implemented the SARSA (on policy) version of the controller system and compared it with Q learning (off policy).
+    \item Implemented a neural net to replace the look-up table and approximate Q function.
+\end{itemize}
+
+\customcvproject{Facial Expression Recognition System}{Oct. 2018 -- Feb. 2019}{}
+\begin{itemize}
+    \item Developed an end-to-end facial expression recognition system with convolutional neural network and support vector machine to classify facial expression using Python.
+    \item Implemented functionality of image preprocessing, feature extraction and classification. The model reaches an accuracy of 95\%.
+    \item Wrote a technical report summarizing the work.
+\end{itemize}
+
+
+{\customcvproject{Linux Kernel Enhancement Project}{Feb 2018 - Jul. 2018}{Operating System Course Project}}
+\begin{itemize}
+    \item Implemented a Linux system call to print the entire process tree in DFS order and another system call to translate the virtual address of a process to physical address.
+    \item Changed Linux page replacement algorithm to second-chance algorithm.
+\end{itemize}
+
+% {\customcvproject{Data Structure}{Sep. 2017 -- Feb. 2018}{Data Structure Course Project}}
+% \begin{itemize}
+%     \item Programmed, debugged, tested in IntelliJ with Java.
+%     \item Improved skills necessary for unit test with JUnit.
+%     \item Implemented various core data structures (list, disjoint set, tree/hash set, tree/hash map, heap-based priority queue) and several classic algorithms on tree/graph traversal, shortest path, minimal spanning tree, compression and sorting. 
+% \end{itemize}
+% \vspace*{-4mm}
+% \section{HONORS \& AWARDS}
+% \vspace*{-2mm}
+% \begin{minipage}{\maincolumnwidth}%
+%     	\begin{itemize}
+%           \item Outstanding Graduated Award (Awarded to $\leq$ 15\% graduated bachelors) \hfill {\itshape May 2019}
+%         %   \item Department of Defense Scholarship \hfill {\itshape Jun. 2017}
+%           \item Yang Yuanqing Educational Fund in Computer Science (\textyen 25,000) \hfill {\itshape Mar. 2017}
+%         %   \item University Merit Student (Awarded to $\leq$ 3\% students each year) \hfill {\itshape Nov. 2016}
+%         %   \item Outstanding Service Medal (Awarded from People's Liberation Army) \hfill {\itshape Sep. 2016}
+% 		\end{itemize}%
+% \end{minipage}%
+
+\vspace*{-4mm}
+\section{ADDITIONAL INFORMATION}
+\vspace*{-2mm}
+    \begin{itemize}
+        \item Programming Languages: JavaScript, Python, Java, Python, JavaScript, C, C++, 
+        \item Tools: Linux, Docker, Version Control (Git,  Github),Web Frameworks (React.js, Express.js, Node.js), Database(MongoDB),Testing ( JUnit), Communication ( \LaTeX), ,  Deep learning framework (Keras, PyTorch)
+        \item Languages: Fluent in Chinese (first language) and English (TOEFL 109, GRE 331 + 4.0)
+        % \item Work Eligibility: Eligible to work in Canada; will not require visa sponsorship for full-time employment
+    \end{itemize}
+
+
+      
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+\end{CJK*}
+\end{document}
+
+
+%% end of file `template.tex'.
+
